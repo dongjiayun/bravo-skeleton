@@ -15,6 +15,11 @@ export default {
       loading:true
     }
   },
+  mounted(){
+    setInterval(()=>{
+      this.loading = !this.loading
+    },1000)
+  }
 }
 </script>
 
