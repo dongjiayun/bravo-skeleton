@@ -20,6 +20,21 @@ if u use .block .pics .texts .circle modifies,it will show skeleton effect.
 ```html
 <div style="background-color: #334880;height: 900px"  v-skeleton.block.texts.circle.pics="loading"></div>
 ```
+### recommend combinations
+```
+1.[.block].circle.texts.pics
+2.[.block].list
+```
+
+### Skeleton-Options
+| Attribute      | Description          | Type      | Accepted Values       | Default  |
+|---------- |-------------- |---------- |--------------------------------  |-------- |
+| block | transform a inline element to inline-block | boolean | — | false |
+| circle | a circle prepend to the head of context | boolean | — | false |
+| texts | a self-computed component of text style skeleton | boolean | — | false |
+| pics | a self-computed component of picture style skeleton | boolean | — | false |
+| list | a self-computed component of list style skeleton,once u use this,the circle,texts,pics will not active | boolean | — | false |
+
 ### Origin-Options
 | Attribute      | Description          | Type      | Accepted Values       | Default  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
@@ -32,12 +47,5 @@ if u use .block .pics .texts .circle modifies,it will show skeleton effect.
 | background | background color of the mask | string | — | — |
 | customClass | custom class name for Loading | string | — | — |
 
-### Skeleton-Options
-| Attribute      | Description          | Type      | Accepted Values       | Default  |
-|---------- |-------------- |---------- |--------------------------------  |-------- |
-| block | transform a inline element to inline-block | boolean | — | false |
-| circle | a circle prepend to the head of context | boolean | — | false |
-| texts | a self-computed component of text style skeleton | boolean | — | false |
-| pics | a self-computed component of picture style skeleton | boolean | — | false |
 
 --from dongjiayun

@@ -112,7 +112,8 @@ skeletonDirective.install = Vue => {
                     fullscreen: !!binding.modifiers.fullscreen,
                     texts: !!binding.modifiers.texts,
                     circle: !!binding.modifiers.circle,
-                    pics:!!binding.modifiers.pics
+                    pics:!!binding.modifiers.pics,
+                    list:!!binding.modifiers.list,
                 }
             });
             el.instance = mask;

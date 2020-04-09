@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <span>示例：</span>
-    <div style="background-color: #334880;height: 900px"  v-skeleton.block.texts.circle.pics="loading"></div>
+    <div style="background-color: #334880;height: 300px;width: 400px"  v-skeleton.block.texts.circle="loading"></div>
+    <div style="background-color: #334880;height: 400px;width: 220px;margin-top: 40px"  v-skeleton.list="loading"></div>
   </div>
 </template>
 
