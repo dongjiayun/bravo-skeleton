@@ -24,9 +24,9 @@ if u use .block .pics .texts .circle modifies,it will show skeleton effect.
 | Attribute      | Description          | Type      | Accepted Values       | Default  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
 | target | the DOM node Loading needs to cover. Accepts a DOM object or a string. If it's a string, it will be passed to `document.querySelector` to get the corresponding DOM node | object/string | — | document.body |
-| body | same as the `body` modifier of `v-loading` | boolean | — | false |
-| fullscreen | same as the `fullscreen` modifier of `v-loading` | boolean | — | true |
-| lock | same as the `lock` modifier of `v-loading` | boolean | — | false |
+| body | same as the `body` modifier of `v-skeleton` | boolean | — | false |
+| fullscreen | same as the `fullscreen` modifier of `v-skeleton` | boolean | — | true |
+| lock | same as the `lock` modifier of `v-skeleton` | boolean | — | false |
 | text | loading text that displays under the spinner | string | — | — |
 | spinner | class name of the custom spinner | string | — | — |
 | background | background color of the mask | string | — | — |
