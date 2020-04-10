@@ -5,7 +5,7 @@
             class="bravo-loading-mask"
             :style="{ backgroundColor: background || '' }"
             :class="[customClass, { 'is-fullscreen': fullscreen }]">
-      <div v-if="!texts&&!circle&&!pics&&!list" class="bravo-loading-spinner">
+      <div v-if="!texts&&!circle&&!pics&&!list&&!image" class="bravo-loading-spinner">
         <svg v-if="!spinner" class="circular" viewBox="25 25 50 50">
           <circle class="path" cx="50" cy="50" r="20" fill="none"/>
         </svg>
@@ -13,12 +13,12 @@
         <p v-if="text" class="bravo-loading-text">{{ text }}</p>
       </div>
       <div v-else class="skeleton">
-        <div v-if="!list">
+        <div v-if="!list&&!image">
           <div v-if="circle" style="margin-bottom: 20px;display: flex">
             <div class="mask-animation skeleton-circle" :style="{margin:!texts?'auto':'',
-          height:!texts?shorter+'px':'120px',
-          width:!texts?shorter+'px':'120px',
-          borderRadius:!texts?shorter+'px':'120px'}"></div>
+          height:!texts?shorter - 60+'px':'120px',
+          width:!texts?shorter - 60+'px':'120px',
+          borderRadius:!texts?shorter - 60+'px':'120px'}"></div>
             <div v-if="texts" style="width:calc(100% - 140px);margin: 10px">
               <div  v-for="index in 3" :class="{indent:index%3==1,tail:index%3==0}" :key="index"  class="mask-animation skeleton-texts"></div>
             </div>
@@ -37,6 +37,7 @@
             <div class="mask-animation skeleton-list"></div>
           </div>
         </div>
+        <div v-if="image" class="mask-animation skeleton-image" :style="{height:shorter*scale*0.75+'px',width:shorter*scale+'px',top:elHeight/2 -30 + 'px'}"></div>
       </div>
     </div>
   </transition>
@@ -56,6 +57,7 @@
         circle:false,
         pics:false,
         list:false,
+        picture:false,
         elHeight:0,
         elWidth:0,
       };
@@ -70,7 +72,11 @@
         return amount>0?amount:0
       },
       shorter(){
-        return (this.elHeight<this.elWidth?this.elHeight:this.elWidth) - 60
+        return this.elHeight<this.elWidth?this.elHeight:this.elWidth
+      },
+      scale(){
+        let scale = (this.elWidth-60)/this.elWidth
+        return (this.elHeight-60)/(this.elWidth-60)<0.75?((this.elHeight-60)/(this.elWidth-60))/0.75:scale
       },
       picsAmount(){
         let amount = parseInt((this.elWidth-60)/172)
@@ -132,6 +138,11 @@
         &.contextTail{
           width: calc(100% - 120px);
         }
+      }
+      .skeleton-image{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%,-50%);
       }
       .skeleton-texts+.skeleton-texts{
         margin-top: 20px;

@@ -24,6 +24,7 @@ if u use .block .pics .texts .circle modifies,it will show skeleton effect.
 ```
 1.[.block].circle.texts.pics
 2.[.block].list
+3.[.block].image
 ```
 
 ### Skeleton-Options
@@ -34,6 +35,7 @@ if u use .block .pics .texts .circle modifies,it will show skeleton effect.
 | texts | a self-computed component of text style skeleton | boolean | — | false |
 | pics | a self-computed component of picture style skeleton | boolean | — | false |
 | list | a self-computed component of list style skeleton,once u use this,the circle,texts,pics will not active | boolean | — | false |
+| image | a image skeleton | boolean | — | false |
 
 ### Origin-Options
 | Attribute      | Description          | Type      | Accepted Values       | Default  |

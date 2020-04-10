@@ -114,6 +114,7 @@ skeletonDirective.install = Vue => {
                     circle: !!binding.modifiers.circle,
                     pics:!!binding.modifiers.pics,
                     list:!!binding.modifiers.list,
+                    image:!!binding.modifiers.image
                 }
             });
             el.instance = mask;

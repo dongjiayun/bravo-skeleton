@@ -3,6 +3,7 @@
     <span>示例：</span>
     <div style="background-color: #334880;height: 300px;width: 400px"  v-skeleton.block.texts.circle="loading"></div>
     <div style="background-color: #334880;height: 400px;width: 220px;margin-top: 40px"  v-skeleton.list="loading"></div>
+    <div style="background-color: #334880;height: 200px;width: 240px;margin-top: 40px"  v-skeleton.image="loading"></div>
   </div>
 </template>
 
@@ -16,9 +17,9 @@ export default {
     }
   },
   mounted(){
-    setInterval(()=>{
-      this.loading = !this.loading
-    },1000)
+    // setInterval(()=>{
+    //   this.loading = !this.loading
+    // },1000)
   }
 }
 </script>
